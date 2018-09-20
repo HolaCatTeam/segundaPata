@@ -7,7 +7,7 @@ import SearchBar from "./components/search/SearchBar.js";
 import ItemPage from "./components/item-page/ItemPage.jsx";
 import ItemsHome from "./components/ItemsHome.js";
 import UploadProduct from "./components/UploadProduct.jsx";
-
+import fire from "./components/fire.jsx";
 
 class Home extends Component {
   constructor(props) {
@@ -17,12 +17,18 @@ class Home extends Component {
       products: undefined,
       product: undefined
     }
+    this.logout = this.logout.bind(this);
     this.setProduct = this.setProduct.bind(this);
     this.handleSubmitToys = this.handleSubmitToys.bind(this);
     this.handleSubmitClothes=this.handleSubmitClothes.bind(this);
     this.handleSubmitBeds=this.handleSubmitBeds.bind(this);
     this.handleSubmitAccesories= this.handleSubmitAccesories.bind(this);
   }
+
+      logout() {
+          fire.auth().signOut();
+      }
+
 
   componentDidMount() {
     axios.get('/items')
@@ -95,6 +101,8 @@ setProduct(id){
 render(){
   return(
     <div>
+    <button onClick={this.logout}>Logout</button>
+
       <center>
         <h1>
           <img src="https://i.imgur.com/hxDOW9A.jpg" title="Una pagina para tus mascotas!" />
