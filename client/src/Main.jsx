@@ -30,9 +30,12 @@ class Main extends Component {
     });
   }
   render() {
-    return (
 
-      <div>{this.state.user ?  ( <Home />) : (<Login />)}
+    return (
+      <div>
+      <center>
+      {this.state.user ?  ( <Home />) : (<Login />)}
+    </center>
     </div>
   )};
 }

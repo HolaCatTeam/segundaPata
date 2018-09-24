@@ -12,6 +12,7 @@ CREATE TABLE items (
   category varchar(50) NOT NULL,
   email varchar(50) NOT NULL,
   vendor varchar(50) NOT NULL,
+  picturePath varchar(50) NOT NULL,
   PRIMARY KEY (ID)
 );
 
@@ -19,9 +20,9 @@ CREATE TABLE items (
  *    mysql -u root -p < server/schema.sql
  *  to create the database and the tables.*/
 
-INSERT INTO items (name, descrip, price, category, email, vendor) VALUES ("hueso mordido", "Hueso de dinosaurio súper sabroso, listo para morder", "$10.00", "juguetes", "amanda@cameil.com", "Juanito García");
-INSERT INTO items (name, descrip, price, category, email, vendor) VALUES ("camita suave", "50cm de diámetro, solo un dueño anterior", "$30.00", "camitas", "pamela@cameil.com", "Pamela Costa");
-INSERT INTO items (name, descrip, price, category, email, vendor) VALUES ("casita de madera", "Para perro pequeño. Nuestro cachorro creció demasiado rápido!", "$10.00", "accesorios", "arnold@cameil.com", "Arnold Guadarrama");
-INSERT INTO items (name, descrip, price, category, email, vendor) VALUES ("comida pedigrí", "bolsa tamaño 400 oz", "$50.00", "accesorios", "amanda@cameil.com", "Amanda de la Costa");
-INSERT INTO items (name, descrip, price, category, email, vendor) VALUES ("zapato viejo", "de la marca nike, perfecto para morder, sabor a queso", "$10.00", "juguetes", "alicia@cameil.com", "Alicia Maravillas");
-INSERT INTO items (name, descrip, price, category, email, vendor) VALUES ("suéter a rayas", "tamaño Chihuahua, casi nuevo", "$25.00", "ropa", "lalord@cameil.com", "Eduardo de León");
+INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("hueso mordido", "Hueso de dinosaurio súper sabroso, listo para morder", "$10.00", "juguetes", "amanda@cameil.com", "Juanito García", "5A4Tek6");
+INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("camita suave", "50cm de diámetro, solo un dueño anterior", "$30.00", "camitas", "pamela@cameil.com", "Pamela Costa", "XKfatYs");
+INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("casita de madera", "Para perro pequeño. Nuestro cachorro creció demasiado rápido!", "$10.00", "accesorios", "arnold@cameil.com", "Arnold Guadarrama", "x825ZGM");
+INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("comida pedigrí", "bolsa tamaño 400 oz", "$50.00", "accesorios", "amanda@cameil.com", "Amanda de la Costa", "WeCudcQ");
+INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("zapato viejo", "de la marca nike, perfecto para morder, sabor a queso", "$10.00", "juguetes", "alicia@cameil.com", "Alicia Maravillas", "dSwTjqE");
+INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("suéter a rayas", "tamaño Chihuahua, casi nuevo", "$25.00", "ropa", "lalord@cameil.com", "Eduardo de León", "byKLxbN");

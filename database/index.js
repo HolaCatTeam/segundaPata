@@ -17,6 +17,16 @@ var selectAll = function(callback) {
   });
 };
 
+// var picturePath = function(callback) {
+//   connection.query('SELECT * FROM items WHERE category = "picturePath"', function(err, results, fields) {
+//     if(err) {
+//       callback(err, null);
+//     } else {
+//       callback(null, results);
+//     }
+//   });
+// };
+
 var selectToys = function(callback) {
   connection.query('SELECT * FROM items WHERE category = "juguetes"', function(err, results, fields) {
     if(err) {
@@ -57,12 +67,22 @@ var selectAccesories = function(callback) {
   });
 };
 
+const getSingleProfile = function(profId) {
+  return new Promise((resolve, reject) => {
+    connection.query('SELECT * FROM profiles WHERE id = profId', (err, data) => {
+      if (err) {
+        return reject(err);
+      }
+    return resolve(data);
+    })
+  })
+};
 
-const insertProduct = function(name, descrip, price, category, email, vendor, callback) {
+const insertProduct = function(name, descrip, price, category, email, vendor, picture_path, callback) {
   console.log("quiubo desde la db");
   connection.query(
-    'INSERT INTO items (name, descrip, price, category, email, vendor) VALUES (?, ?, ?, ?, ?, ?)',
-    [name, descrip, price, category, email, vendor],
+    'INSERT INTO items (name, descrip, price, category, email, vendor, picture_path) VALUES (?, ?, ?, ?, ?, ?)',
+    [name, descrip, price, category, email, vendor, picture_path],
     (err, results, fields) => {
       if (err) {
         callback(err, null);

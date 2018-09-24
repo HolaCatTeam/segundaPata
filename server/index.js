@@ -7,6 +7,9 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 
 
+
+
+
 app.get('/items', function (req, res) {
   items.selectAll(function(err, data) {
     if(err) {
@@ -17,6 +20,19 @@ app.get('/items', function (req, res) {
     }
   });
 });
+
+// app.get('/picturePath', function (req, res) {
+//   items.picturePath(function(err, data) {
+//     if(err) {
+//       console.log(err);
+//       res.sendStatus(500);
+//     } else {
+//       console.log("get all pictures request performed")
+//       res.json(data);
+//     }
+//   });
+// });
+
 app.get('/toys', function (req, res) {
   items.selectToys(function(err, data) {
     if(err) {
