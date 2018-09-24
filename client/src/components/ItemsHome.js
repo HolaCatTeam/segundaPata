@@ -9,8 +9,10 @@ const ItemsHome = (props) => (
       <div>
         {props.products.map((item, id) => (
           <div>
+
           <img src={`https://i.imgur.com/${item.picturePath}.jpg`}/>
           <SingleItem item={item} key={id} setProduct={props.setProduct}/>
+          
           </div>
         ))}
       </div>
