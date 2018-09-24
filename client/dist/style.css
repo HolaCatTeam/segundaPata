@@ -63,9 +63,9 @@ h4 {
 
   p { margin: 2em; }
   button{font-size: 17px;}
-button { background-color: #F2C7D6; color: #35424B; }
-button:hover { background-color: LightSteelBlue; }
-button:active { background-color: SteelBlue; color: White;
+/* button { background-color: #F2C7D6; color: #35424B; } */
+/* button:hover { background-color: LightSteelBlue; }
+button:active { background-color: SteelBlue; color: White; */
 
 }
     .data{
@@ -158,4 +158,28 @@ button:active { background-color: SteelBlue; color: White;
 
   footer h3 {
   color:#E3E1D0;
+ }
+
+ .gallery-images{
+    width: 80px;
+    height: 80px;
+    margin-left: 150px;
+    margin-top: 25px;
+  }
+
+ .gallery-images:hover{
+   transform: scale(1.3);
+   cursor: pointer;
+ }
+
+ .selected{
+   margin-left: 1150px;
+   margin-top: -20px;
+
+ }
+
+ .avatarS {
+   width: 20%;
+   height: 20%;
+   border-radius: 50%;
  }
