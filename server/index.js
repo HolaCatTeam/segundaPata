@@ -21,17 +21,16 @@ app.get('/items', function (req, res) {
   });
 });
 
-// app.get('/picturePath', function (req, res) {
-//   items.picturePath(function(err, data) {
-//     if(err) {
-//       console.log(err);
-//       res.sendStatus(500);
-//     } else {
-//       console.log("get all pictures request performed")
-//       res.json(data);
-//     }
-//   });
-// });
+app.get('/avatar', function (req, res) {
+  items.selectAvatar(function(err, data) {
+    if(err) {
+      res.sendStatus(500);
+    } else {
+      console.log("get all images request performed")
+      res.json(data);
+    }
+  });
+});
 
 app.get('/toys', function (req, res) {
   items.selectToys(function(err, data) {
@@ -40,6 +39,17 @@ app.get('/toys', function (req, res) {
       res.sendStatus(500);
     } else {
       console.log("get all toys request performed")
+      res.json(data);
+    }
+  });
+});
+
+app.get('/avatar', function (req, res) {
+  items.selectAvatar(function(err, data) {
+    if(err) {
+      res.sendStatus(500);
+    } else {
+      console.log("get all images request performed")
       res.json(data);
     }
   });
