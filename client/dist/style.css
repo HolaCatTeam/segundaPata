@@ -59,6 +59,10 @@ h4 {
   	transition:all 500ms ease;
   }
 
+  #newBack {
+    background-image: url('1ff.png'); 
+  }
+
 
 
   p { margin: 2em; }
@@ -160,4 +164,35 @@ button:active { background-color: SteelBlue; color: White;
   color:#E3E1D0;
  }
 
- 
+
+#logoutButton {
+  width: 90px;
+  height: 89px;
+  background-image: url('logout.png');
+  background-size: cover;
+  background-color: #eee;
+  border-radius: 50%;
+  border-color: transparent;
+  margin-bottom: 1vw;
+  margin-left: 1vw;
+}
+
+#logoutText {
+color: #e66cd0;
+font-weight: bold;
+font-size: 1em;
+}
+
+#main_page {
+  margin-top: 5vw;
+}
+
+#login {
+  background-color: #9c7775;
+  border-color: transparent;
+}
+
+#signup {
+  background-color: #a7dee4;
+  border-color: transparent;
+}

@@ -35,6 +35,7 @@ class Login extends Component {
   }
   render() {
     return (
+      <center>
        <div className="col-md-6">
        <img src="https://i.imgur.com/hxDOW9A.jpg" title="Una pagina para tus mascotas!" />
        <h1>Segunda Pata</h1>
@@ -48,11 +49,12 @@ class Login extends Component {
       <label for="exampleInputPassword1">Password</label>
       <input value={this.state.password} onChange={this.handleChange} type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="" />
       </div>
-      <button type="submit" onClick={this.login} class="btn btn-primary">Login</button>
-      <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">Signup</button>
- </form>
+      <button type="submit" onClick={this.login} id="login" class="btn btn-primary">Login</button>
+      <button onClick={this.signup} id="signup" style={{marginLeft: '25px'}} className="btn btn-success">Signup</button>
+      </form>
 
- </div>
+      </div>
+    </center>
     );
   }
 }

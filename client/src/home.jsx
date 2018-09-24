@@ -114,7 +114,7 @@ render(){
   return(
     <div>
 
-    <button onClick={this.logout}>Logout</button>
+    <button id="logoutButton" onClick={this.logout} alt="logout"></button><span id="logoutText">Logout</span>
       <center>
         <div>
           <img src="https://i.imgur.com/hxDOW9A.jpg" title="Una pagina para tus mascotas!" />

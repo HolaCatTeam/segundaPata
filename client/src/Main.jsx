@@ -32,7 +32,8 @@ class Main extends Component {
   render() {
     return (
 
-      <div>{this.state.user ?  ( <Home />) : (<Login />)}
+      <div id="main_page">
+          {this.state.user ?  ( <Home />) : (<Login />)}
     </div>
   )};
 }
