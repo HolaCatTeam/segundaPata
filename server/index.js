@@ -7,6 +7,9 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 
 
+
+
+
 app.get('/items', function (req, res) {
   items.selectAll(function(err, data) {
     if(err) {

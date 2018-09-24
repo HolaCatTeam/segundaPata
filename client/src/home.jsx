@@ -8,7 +8,6 @@ import ItemPage from "./components/item-page/ItemPage.jsx";
 import ItemsHome from "./components/ItemsHome.js";
 import UploadProduct from "./components/UploadProduct.jsx";
 import fire from "./components/fire.jsx";
-
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -39,6 +38,16 @@ class Home extends Component {
     })
   }
 
+//   handleSubmitPicturePath(){
+//     //alert('toys called');
+//    axios.get('/picturePath')
+//    .then(res => {
+//     const picturePath = res.data;
+//     this.setState({ picturePath })
+//  })
+// }
+
+
  handleSubmitToys(){
    //alert('toys called');
   axios.get('/toys')
@@ -58,6 +67,7 @@ class Home extends Component {
     this.setState({products});
   })
  }
+
  handleSubmitBeds(){
    //alert('toys called');
   axios.get('/beds')
@@ -100,20 +110,22 @@ setProduct(id){
 
 
 render(){
+  console.log(this.state.items);
   return(
     <div>
+
     <button onClick={this.logout}>Logout</button>
       <center>
-        <h1>
+        <div>
           <img src="https://i.imgur.com/hxDOW9A.jpg" title="Una pagina para tus mascotas!" />
-          <div>Segunda Pata</div>
-        </h1>
+          <h1>Segunda Pata</h1>
+        </div>
         <h2>Vende y Compra Accesorios, para Mascotas.</h2>
         <SearchBar items={this.state.items} handleSubmitToys={this.handleSubmitToys}
         handleSubmitClothes={this.handleSubmitClothes} handleSubmitBeds={this.handleSubmitBeds}
         handleSubmitAccesories={this.handleSubmitAccesories}
         />
-      <ItemsHome items={this.state.items} products={this.state.products} setProduct={this.setProduct} />
+        <ItemsHome items={this.state.items.picturePath} products={this.state.products} setProduct={this.setProduct}/>
       </center>
       <div className="fb-like" data-href="https://github.com/mambo-num-5" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
     </div>

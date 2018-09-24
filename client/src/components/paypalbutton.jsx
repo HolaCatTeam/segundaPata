@@ -85,7 +85,7 @@ class PaypalButton extends React.Component {
           });
 
     return (
-      
+
       <div>
         {showButton && <paypal.Button.react
           env={env}

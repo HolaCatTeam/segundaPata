@@ -36,15 +36,17 @@ class Login extends Component {
   render() {
     return (
        <div className="col-md-6">
+       <img src="https://i.imgur.com/hxDOW9A.jpg" title="Una pagina para tus mascotas!" />
+       <h1>Segunda Pata</h1>
        <form>
       <div class="form-group">
        <label for="exampleInputEmail1">Email address</label>
        <input value={this.state.email} onChange={this.handleChange} type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+       <small id="emailHelp" class="form-text text-muted"></small>
       </div>
        <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input value={this.state.password} onChange={this.handleChange} type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+      <input value={this.state.password} onChange={this.handleChange} type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="" />
       </div>
       <button type="submit" onClick={this.login} class="btn btn-primary">Login</button>
       <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">Signup</button>
