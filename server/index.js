@@ -44,6 +44,17 @@ app.get('/toys', function (req, res) {
   });
 });
 
+app.get('/avatar', function (req, res) {
+  items.selectAvatar(function(err, data) {
+    if(err) {
+      res.sendStatus(500);
+    } else {
+      console.log("get all images request performed")
+      res.json(data);
+    }
+  });
+});
+
 app.get('/clothes', function (req, res) {
   items.selectClothes(function(err, data) {
     if(err) {

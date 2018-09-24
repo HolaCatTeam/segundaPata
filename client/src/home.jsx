@@ -2,12 +2,14 @@ import React, {Component}from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
 import axios from "axios";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import AvatarSelected from "./components/avatarSelected.jsx"
 import SearchBar from "./components/search/SearchBar.js";
 import ItemPage from "./components/item-page/ItemPage.jsx";
 import ItemsHome from "./components/ItemsHome.js";
 import UploadProduct from "./components/UploadProduct.jsx";
 import fire from "./components/fire.jsx";
+import Login from "./components/Login.jsx"
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -110,11 +112,10 @@ setProduct(id){
 
 
 render(){
-  console.log(this.state.items);
   return(
     <div>
-
-    <button id="logoutButton" onClick={this.logout} alt="logout"></button><span id="logoutText">Logout</span>
+    <button onClick={this.logout}>Logout</button>
+      <AvatarSelected avatar={this.props.avatar}/>
       <center>
         <div>
           <img src="https://i.imgur.com/hxDOW9A.jpg" title="Una pagina para tus mascotas!" />

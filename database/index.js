@@ -7,6 +7,16 @@ var connection = mysql.createConnection({
   database : 'segundaPata'
 });
 
+var selectAvatar = function(callback) {
+  connection.query('SELECT * FROM avatar', function(err, results, fields) {
+    if(err) {
+      callback(err, null);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
 var selectAll = function(callback) {
   connection.query('SELECT * FROM items', function(err, results, fields) {
     if(err) {
@@ -110,7 +120,7 @@ const addPurchase = function(name, price, quantity, callback) {
   );
 };
 
-
+module.exports.selectAvatar = selectAvatar;
 module.exports.selectAll = selectAll;
 module.exports.selectToys = selectToys;
 module.exports.insertProduct = insertProduct;

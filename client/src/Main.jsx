@@ -3,19 +3,30 @@ import fire from "./components/fire.jsx";
 import Login from "./components/Login.jsx";
 import App from "./App.jsx";
 import Home from "./home.jsx"
+import axios from "axios";
 
 class Main extends Component {
   constructor() {
     super();
     this.state = ({
       user: null,
+      avatar: ''
     });
     this.authListener = this.authListener.bind(this);
-  }
+    this.getAvatar = this.getAvatar.bind(this);
+}
+
+
 
   componentDidMount() {
     this.authListener();
   }
+
+  getAvatar(avatar){
+      this.setState({
+        avatar: avatar
+      })
+    }
 
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
@@ -30,10 +41,12 @@ class Main extends Component {
     });
   }
   render() {
+    console.log(this.state.avatar)
     return (
-
-      <div id="main_page">
-          {this.state.user ?  ( <Home />) : (<Login />)}
+      <div>
+      <center>
+      {this.state.user ?  ( <Home avatar={this.state.avatar}/>) : (<Login getAvatar= {this.getAvatar} avatar={this.state.avatar}/>)}
+    </center>
     </div>
   )};
 }

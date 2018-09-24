@@ -35,3 +35,21 @@ INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) V
 INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("comida pedigrí", "bolsa tamaño 400 oz", "$50.00", "accesorios", "amanda@cameil.com", "Amanda de la Costa", "WeCudcQ");
 INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("zapato viejo", "de la marca nike, perfecto para morder, sabor a queso", "$10.00", "juguetes", "alicia@cameil.com", "Alicia Maravillas", "dSwTjqE");
 INSERT INTO items (name, descrip, price, category, email, vendor, picturePath) VALUES ("suéter a rayas", "tamaño Chihuahua, casi nuevo", "$25.00", "ropa", "lalord@cameil.com", "Eduardo de León", "byKLxbN");
+
+CREATE TABLE avatar (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  image_path varchar(500) NOT NULL,
+  PRIMARY KEY (ID)
+);
+
+INSERT INTO avatar (name, image_path) VALUES ("pug", "PrmfMwq");
+INSERT INTO avatar (name, image_path) VALUES ("cuteDog", "uTEwIms");
+INSERT INTO avatar (name, image_path) VALUES ("dog", "e52MmBb");
+INSERT INTO avatar (name, image_path) VALUES ("bigDog", "j3sdyZU");
+INSERT INTO avatar (name, image_path) VALUES ("spotDog", "5lOxGqV");
+INSERT INTO avatar (name, image_path) VALUES ("pomerianDog", "FDIXAnQ");
+INSERT INTO avatar (name, image_path) VALUES ("b/n dog", "KxhXOCj");
+INSERT INTO avatar (name, image_path) VALUES ("coquer", "MijhQSl");
+INSERT INTO avatar (name, image_path) VALUES ("dogSmall", "7BL5Y7J");
+INSERT INTO avatar (name, image_path) VALUES ("cat2", "F7MJ7ND");
