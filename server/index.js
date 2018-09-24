@@ -17,6 +17,18 @@ app.get('/items', function (req, res) {
     }
   });
 });
+
+app.get('/checkout', function (req, res) {
+  items.checkout(function(err, data) {
+    if(err) {
+      res.sendStatus(500);
+    } else {
+      console.log("get all sales")
+      res.json(data);
+    }
+  });
+});
+
 app.get('/toys', function (req, res) {
   items.selectToys(function(err, data) {
     if(err) {
@@ -76,6 +88,25 @@ app.post('/items', function(req, res) {
     res.sendStatus(400);
   } else {
     items.insertProduct(name, descrip, price, category, email, vendor, (err, results) => {
+      if (err) {
+        res.sendStatus(500);
+      } else {
+        res.status(200).json(results);
+      }
+    });
+  }
+});
+
+app.post('/sold', function(req, res) {
+  let name = req.body.name;
+  let price = req.body.price;
+  let quantity = req.body.quantity;
+
+  if (!name) {
+    console.log(name)
+    res.sendStatus(400);
+  } else {
+    items.addPurchase(name, price, quantity, (err, results) => {
       if (err) {
         res.sendStatus(500);
       } else {

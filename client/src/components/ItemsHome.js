@@ -3,11 +3,12 @@ import React from 'react';
 import SingleItem from "./item-page/SingleItem.jsx";
 
 const ItemsHome = (props) => (
-  <div>
+
+  <div>{console.log(props)}
     { props.products ?
       <div>
         {props.products.map((item, id) => (
-          <SingleItem item={item} key={id} setProduct={props.setProduct}/>
+          <SingleItem item={item} key={id} setProduct={props.setProduct} />
         ))}
       </div>
     : <div><img src="https://www.aperrados.com/wp-content/uploads/2017/01/bulldog-ingles-700x452.jpeg" alt="aquí van imagenes de perritos bien cute" /></div> }

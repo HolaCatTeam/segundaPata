@@ -15,6 +15,15 @@ CREATE TABLE items (
   PRIMARY KEY (ID)
 );
 
+
+CREATE TABLE soldItems (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(100) NOT NULL,
+  price varchar(50) NOT NULL,
+  quantity int NOT NULL,
+  PRIMARY KEY (ID)
+);
+
 /*  Execute this file from the command line by typing:
  *    mysql -u root -p < server/schema.sql
  *  to create the database and the tables.*/

@@ -2,7 +2,7 @@ import React, {Component}from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
 import axios from "axios";
-
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import SearchBar from "./components/search/SearchBar.js";
 import ItemPage from "./components/item-page/ItemPage.jsx";
 import ItemsHome from "./components/ItemsHome.js";
@@ -23,6 +23,7 @@ class Home extends Component {
     this.handleSubmitClothes=this.handleSubmitClothes.bind(this);
     this.handleSubmitBeds=this.handleSubmitBeds.bind(this);
     this.handleSubmitAccesories= this.handleSubmitAccesories.bind(this);
+
   }
 
       logout() {
@@ -102,7 +103,6 @@ render(){
   return(
     <div>
     <button onClick={this.logout}>Logout</button>
-
       <center>
         <h1>
           <img src="https://i.imgur.com/hxDOW9A.jpg" title="Una pagina para tus mascotas!" />
@@ -113,7 +113,7 @@ render(){
         handleSubmitClothes={this.handleSubmitClothes} handleSubmitBeds={this.handleSubmitBeds}
         handleSubmitAccesories={this.handleSubmitAccesories}
         />
-        <ItemsHome items={this.state.items} products={this.state.products} setProduct={this.setProduct}/>
+      <ItemsHome items={this.state.items} products={this.state.products} setProduct={this.setProduct} />
       </center>
       <div className="fb-like" data-href="https://github.com/mambo-num-5" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
     </div>

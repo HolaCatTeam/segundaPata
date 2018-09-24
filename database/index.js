@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'holacode',
+  password : 'password',
   database : 'segundaPata'
 });
 
@@ -57,6 +57,16 @@ var selectAccesories = function(callback) {
   });
 };
 
+var checkout = function(callback) {
+  connection.query('SELECT * FROM soldItems', function(err, results, fields) {
+    if(err) {
+      callback(err, null);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
 
 const insertProduct = function(name, descrip, price, category, email, vendor, callback) {
   console.log("quiubo desde la db");
@@ -75,6 +85,20 @@ const insertProduct = function(name, descrip, price, category, email, vendor, ca
 };
 
 
+const addPurchase = function(name, price, quantity, callback) {
+  connection.query(
+    'INSERT INTO soldItems (name, price, quantity) VALUES (?, ?, ?)',
+    [name, price, quantity],
+    (err, results, fields) => {
+      if (err) {
+        callback(err, null);
+      } else {
+        console.log(results);
+        callback(null, results);
+      }
+    }
+  );
+};
 
 
 module.exports.selectAll = selectAll;
@@ -83,3 +107,5 @@ module.exports.insertProduct = insertProduct;
 module.exports.selectClothes = selectClothes;
 module.exports.selectBeds = selectBeds;
 module.exports.selectAccesories = selectAccesories;
+module.exports.addPurchase = addPurchase;
+module.exports.checkout = checkout;
