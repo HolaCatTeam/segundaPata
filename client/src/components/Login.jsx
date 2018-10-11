@@ -46,6 +46,7 @@ class Login extends Component {
   }
   render() {
     return (
+      <center>
        <div className="col-md-6">
        <img src="https://i.imgur.com/hxDOW9A.jpg" title="Una pagina para tus mascotas!" />
        <h1>Segunda Pata</h1>

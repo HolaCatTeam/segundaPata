@@ -3,13 +3,16 @@ import React from 'react';
 import SingleItem from "./item-page/SingleItem.jsx";
 
 const ItemsHome = (props) => (
-  <div>
+
+  <div>{console.log(props)}
     { props.products ?
       <div>
         {props.products.map((item, id) => (
           <div>
+
           <img src={`https://i.imgur.com/${item.picturePath}.jpg`}/>
           <SingleItem item={item} key={id} setProduct={props.setProduct}/>
+          
           </div>
         ))}
       </div>

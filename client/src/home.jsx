@@ -24,6 +24,7 @@ class Home extends Component {
     this.handleSubmitClothes=this.handleSubmitClothes.bind(this);
     this.handleSubmitBeds=this.handleSubmitBeds.bind(this);
     this.handleSubmitAccesories= this.handleSubmitAccesories.bind(this);
+
   }
 
       logout() {
